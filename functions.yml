@@ -1,0 +1,26 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  pydict:
+    lang: python3-flask-debian
+    handler: ./pydict
+    image: localhost:5000/pydict:latest
+
+  translator:
+    lang: python3-flask-debian
+    handler: ./translator
+    image: localhost:5000/translator:latest
+
+
+  hello-world:
+    lang: node16
+    handler: ./hello-world
+    image: localhost:5000/hello-world:latest
+
+  hello-python:
+    lang: python
+    handler: ./hello-python
+    image: localhost:5000/hello-python:latest
+
